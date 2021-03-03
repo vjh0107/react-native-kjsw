@@ -38,7 +38,7 @@ export default function HomeScreen() {
           </View>
 
           <Text style={styles.getStartedText}>
-            Change any of the text, save the file, and your app will automatically reload.
+            1
           </Text>
         </View>
 
@@ -68,31 +68,31 @@ function DevelopmentModeNotice() {
   if (__DEV__) {
     const learnMoreButton = (
       <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        Learn more
+        1
       </Text>
     );
 
     return (
       <Text style={styles.developmentModeText}>
-        This tutorial is created by Ravi S Singh. {learnMoreButton}
+        테스트 토글
       </Text>
     );
   } else {
     return (
       <Text style={styles.developmentModeText}>
-        You are not in development mode: your app will run at full speed.
+        개발모드 해제
       </Text>
     );
   }
 }
 
 function handleLearnMorePress() {
-  WebBrowser.openBrowserAsync('https://ravissingh.wordpress.com/');
+  WebBrowser.openBrowserAsync('https://github.com/vjh0107');
 }
 
 function handleHelpPress() {
   WebBrowser.openBrowserAsync(
-    'https://medium.com/@factedu'
+    'https://github.com/vjh0107'
   );
 }
 

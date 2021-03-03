@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, ActivityIndicator } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon from '@expo/vector-icons/FontAwesome5';
 import { Card, Text, Input, Button } from 'react-native-elements';
 import firebase from 'firebase';
 import * as GoogleSignIn from 'expo-google-sign-in';
@@ -31,7 +31,7 @@ class LoginScreen extends Component {
     _syncUserWithStateAsync = async () => {
         const user = await GoogleSignIn.signInSilentlyAsync();
         console.log(user);
-        // TODO :: now the use object has been received from google do a firebase signup
+        // 이제 객체를 파이어베이스에서 넘겨옴
         this.setState({ user: user });
     }
 
@@ -75,9 +75,9 @@ class LoginScreen extends Component {
             })
             .catch(err => {
                 console.log(err);
-                alert(err + ' May be you should signup first!!');
+                alert(err + '올바르지 않는 비밀번호 이거나 계정이 없으시다면, 회원가입 해주세요.');
             })
-        // alert(`Signing in with email ${email}:${password}`);
+        // alert(`회원가입 완료 ${email}:${password}`);
     }
 
     render() {
@@ -85,12 +85,12 @@ class LoginScreen extends Component {
             <View style={styles.container}>
 
                 <Card
-                    title='Login'
+                    title='로그인'
                     containerStyle={styles.card}
                 >
                     {(this.state.loading) ? <ActivityIndicator size='large' /> : null}
                     <Input
-                        placeholder='Email'
+                        placeholder='이메일 주소'
                         leftIcon={
                             <Icon
                                 name='envelope'
@@ -100,7 +100,7 @@ class LoginScreen extends Component {
                         onChangeText={(text) => this.setState({ email: text })}
                     />
                     <Input
-                        placeholder='Password'
+                        placeholder='비밀번호'
                         leftIcon={
                             <Icon
                                 name='lock'
@@ -122,11 +122,11 @@ class LoginScreen extends Component {
                         buttonStyle={{ backgroundColor: Colors.primary }}
                         loading={false}
                         raised
-                        title="Sign In"
+                        title="로그인"
                         onPress={() => this.signInWithEmailAndPassword()}
                     >
                     </Button>
-                    <Text style={{textAlign:'center',fontSize:16,padding:15}}>OR, Don't have account yet?</Text>
+                    <Text style={{textAlign:'center',fontSize:16,padding:15}}>아직 계정이 없으십니까?</Text>
                     <Button
                         icon={{
                             name: "user-plus",
@@ -138,7 +138,7 @@ class LoginScreen extends Component {
                         titleStyle={{color:'white'}}
                         loading={false}
                         raised
-                        title="Sign Up"
+                        title="회원가입"
                         onPress={() => this.props.navigation.navigate('Signup')}
                     >
                     </Button>
@@ -152,7 +152,7 @@ class LoginScreen extends Component {
                     }}
                     loading={false}
                     raised
-                    title="Sign in with google"
+                    title="구글 아이디로 로그인 합니다"
                     titleStyle={{ color: 'black' }}
                     containerStyle={styles.buttonContainer}
                     buttonStyle={styles.button}

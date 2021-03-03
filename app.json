@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "F.A.C.T",
-    "slug": "factedu-app",
+    "name": "keumjeongproject",
+    "slug": "keumjeongproject-slug",
     "platforms": [
       "ios",
       "android",
@@ -23,12 +23,12 @@
       "**/*"
     ],
     "android":{
-      "package":"fact.todo",
+      "package":"com.vjh0107",
       "googleServicesFile":"./constants/google-services.json"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier":"com.factedu.todo",
+      "bundleIdentifier":"com.vjh0107",
       "config":{
         "googleSignIn":{
           "reservedClientId":"com.googleusercontent.apps.77578344225-vmn2nb51forkbhqjn553gi73kjp60lsu"

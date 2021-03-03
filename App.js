@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { SplashScreen } from 'expo';
 import * as Font from 'expo-font';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons} from '@expo/vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -11,11 +11,12 @@ import AuthNavigator from './screens/Auth/AuthNavigator';
 
 import MainTabNavigator from './screens/Home/MainTabNavigator';
 
-// changed to have a single firebase from services 
+
 import firebase from './services/firebase.service';
 
 
 import { DrawerContent } from './screens/Home/DrawerContent';
+
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -25,18 +26,17 @@ export default function App(props) {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const containerRef = React.useRef();
 
-  // Load any resources or data that we need prior to rendering the app
+
   React.useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
         SplashScreen.preventAutoHide();
-        // Load fonts
+
         await Font.loadAsync({
-          ...Ionicons.font,
+          ionicons: Ionicons.font['ionicons'],
           'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
         });
       } catch (e) {
-        // We might want to provide this error information to an error reporting service
         console.warn(e);
       } finally {
         setLoadingComplete(true);
@@ -82,6 +82,6 @@ export default function App(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
+    backgroundColor: '#fff'
+  }
 });

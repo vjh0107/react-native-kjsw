@@ -14,7 +14,6 @@ class LoadingScreen extends Component {
     checkIfLoggedIn() {
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                // TODO:: handle user logged in (it is auto handled by router at App.js)
                 // this.props.navigation.navigate('Home');
             } else {
                 this.props.navigation.navigate('Login');

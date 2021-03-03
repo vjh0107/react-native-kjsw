@@ -27,9 +27,9 @@ class SignupScreen extends Component {
                 return res;
             })
             .catch(err => {
-                console.log(err);
-                alert(err + ' If you own this email, you should login!!');
-                throw new Error(err);
+                //console.log(err);
+                alert(err + '올바르지 않는 비밀번호 이거나 이미 가입된 이메일입니다.');
+                //throw new Error(err);
             });
     }
 
@@ -38,12 +38,12 @@ class SignupScreen extends Component {
             <View style={styles.container}>
 
                 <Card
-                    title='Create an account'
+                    title='계정 생성'
                     containerStyle={styles.card}
                 >
                     {(this.state.loading) ? <ActivityIndicator size='large' /> : null}
                     <Input
-                        placeholder='Email'
+                        placeholder='이메일 주소'
                         leftIcon={
                             <Icon
                                 name='envelope'
@@ -53,7 +53,7 @@ class SignupScreen extends Component {
                         onChangeText={(text) => this.setState({ email: text })}
                     />
                     <Input
-                        placeholder='Password'
+                        placeholder='비밀번호'
                         leftIcon={
                             <Icon
                                 name='lock'
@@ -75,14 +75,14 @@ class SignupScreen extends Component {
                         buttonStyle={{ backgroundColor: Colors.primary }}
                         loading={false}
                         raised
-                        title="Sign Up"
+                        title="가입하기"
                         onPress={() => this.createUserWithEmailAndPassword()}
                     >
                     </Button>
 
                 </Card>
                 <View>
-                    <Text style={{ textAlign: 'center', fontSize: 16, padding: 15 }}>Already have account?</Text>
+                    <Text style={{ textAlign: 'center', fontSize: 16, padding: 15 }}>이미 계정이 있으십니까?</Text>
                     <Button
                         icon={{
                             name: "sign-in",
@@ -94,7 +94,7 @@ class SignupScreen extends Component {
                         titleStyle={{ color: 'white' }}
                         loading={false}
                         raised
-                        title="Login"
+                        title="로그인하기"
                         onPress={() => this.props.navigation.navigate('Login')}
                     >
                     </Button>

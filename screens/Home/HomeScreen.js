@@ -22,11 +22,8 @@ const HomeScreen = ({ navigation }) => {
       </View>
       <View style={styles.developerInfo}>
         <Title>
-          F.A.C.T. React Native Starter Kit
+          리액트 네이티브 프로젝트
       </Title>
-        <Caption>
-          Developed and Opensourced by : Ravi S. Singh
-      </Caption>
       </View>
 
     </View>

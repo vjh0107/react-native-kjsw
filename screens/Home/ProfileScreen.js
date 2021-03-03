@@ -16,9 +16,7 @@ const ProfileScreen = () => {
       photoURL: "https://api.adorable.io/avatars/285/" + displayName + '.png'
     }).then(() => {
       alert('Profile Updated!!');
-      // Alert.alert('Profile Updated','Your profile has been update successfully.');
     }).catch((error) => {
-      // An error happened.
       alert(error);
     }).finally(() => {
       setLoading(false);
@@ -42,13 +40,13 @@ const ProfileScreen = () => {
       visible={!user.emailVerified}
       actions={[
         {
-          label: 'Send Vefication Email',
+          label: '이메일 인증 보내기',
           onPress: () => sendVerificationEmail(),
           loading: sending
         },
       ]}
     >
-      Your email is not yet verified. After your email verification please signout and login again in app for changes to take effect.
+      이메일 인증이 되지 않았습니다. 이메일을 통해 이메일 인증을 진행해주시고, 다시 로그인해주세요.
     </Banner>
   );
 
@@ -57,7 +55,6 @@ const ProfileScreen = () => {
       <Card style={{ width: '100%' }}>
 
         <Card.Title title={displayName} subtitle={user.email} left={LeftContent} />
-        {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} /> */}
         <Card.Content>
           <TextInput
             label='Display Name'

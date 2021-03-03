@@ -15,7 +15,7 @@ import {
     DrawerItem
 } from '@react-navigation/drawer';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from '@expo/vector-icons/MaterialCommunityIcons';
 import firebase from 'firebase';
 
 export function DrawerContent(props) {
@@ -79,7 +79,7 @@ export function DrawerContent(props) {
                             )}
                             label="Profile"
                             onPress={() => { props.navigation.navigate('Profile') }}
-                        />                       
+                        />
                     </Drawer.Section>
                     <Drawer.Section title="Preferences">
                         <TouchableRipple onPress={() => { toggleTheme() }}>
@@ -102,7 +102,7 @@ export function DrawerContent(props) {
                             size={size}
                         />
                     )}
-                    label="Sign Out"
+                    label="로그아웃"
                     onPress={() => { logout() }}
                 />
             </Drawer.Section>
